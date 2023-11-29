@@ -33,7 +33,6 @@ SELECT DISTINCT s.shippingid
      , s.vendorid
      , s.shipping_plan_datetime
      , s.payment_amount
-     , s.shipping_transfer_rate
   FROM shipping s
 ),
 shipments_arr AS (
@@ -44,7 +43,6 @@ SELECT s.shippingid
      , s.vendorid
      , s.shipping_plan_datetime
      , s.payment_amount
-     , s.shipping_transfer_rate
   FROM shipments s
 )
 SELECT s.shippingid
@@ -55,12 +53,11 @@ SELECT s.shippingid
      , s.shipping_plan_datetime
      , s.payment_amount
   FROM shipments_arr s
-  LEFT JOIN shipping_country_rates scr
+  JOIN shipping_country_rates scr
     on scr.shipping_country = s.shipping_country
-  LEFT JOIN shipping_transfer st
+  JOIN shipping_transfer st
     ON st.transfer_type = s.shipping_transfer_description_arr[1]
-   AND st.transfer_model = s.shipping_transfer_description_arr[2]
-   AND st.shipping_transfer_rate = s.shipping_transfer_rate;
+   AND st.transfer_model = s.shipping_transfer_description_arr[2];
 
 CREATE INDEX shipping_info_shipping_country_rate_id_ix
     ON shipping_info(shipping_country_rate_id); 

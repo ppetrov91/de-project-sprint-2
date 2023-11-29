@@ -8,7 +8,6 @@ CREATE TABLE shipping_country_rates (
 	constraint shipping_country_rate_shipping_country_ukey UNIQUE(shipping_country)
 );
 
-
 INSERT INTO shipping_country_rates(shipping_country, shipping_country_base_rate)
 SELECT DISTINCT s.shipping_country
 	 , s.shipping_country_base_rate
