@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS shipping_transfer;
+DROP TABLE IF EXISTS shipping_transfer CASCADE;
 
 CREATE TABLE shipping_transfer (
     id bigserial,

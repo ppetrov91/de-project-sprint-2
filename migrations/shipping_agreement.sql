@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS shipping_agreement;
+DROP TABLE IF EXISTS shipping_agreement CASCADE;
 
 CREATE TABLE shipping_agreement (
     agreement_id bigint,

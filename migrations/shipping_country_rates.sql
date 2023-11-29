@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS shipping_country_rates;
+DROP TABLE IF EXISTS shipping_country_rates CASCADE;
 
 CREATE TABLE shipping_country_rates (
     id bigserial,

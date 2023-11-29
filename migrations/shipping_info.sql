@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS shipping_info;
+DROP TABLE IF EXISTS shipping_info CASCADE;
 
 CREATE TABLE shipping_info (
     shipping_id bigint,
