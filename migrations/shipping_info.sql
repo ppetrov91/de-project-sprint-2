@@ -24,7 +24,7 @@ ALTER TABLE shipping_info
 REFERENCES shipping_transfer(id) ON UPDATE CASCADE;
 
 INSERT INTO shipping_info(shipping_id, shipping_country_rate_id, shipping_agreement_id, shipping_transfer_id,
-						  vendor_id, shipping_plan_datetime, payment_amount)
+			  vendor_id, shipping_plan_datetime, payment_amount)
 WITH shipments AS ( 
 SELECT DISTINCT s.shippingid
      , s.shipping_country
