@@ -1,14 +1,14 @@
 DROP TABLE IF EXISTS shipping_info;
 
 CREATE TABLE shipping_info (
-	shipping_id bigint,
-	shipping_country_rate_id bigint,
-	shipping_agreement_id bigint,
-	shipping_transfer_id bigint,
-	vendor_id bigint,
-	shipping_plan_datetime timestamp,
-	payment_amount numeric(14,2),
-	constraint shipping_info_shipping_id_pkey PRIMARY KEY(shipping_id)
+    shipping_id bigint,
+    shipping_country_rate_id bigint,
+    shipping_agreement_id bigint,
+    shipping_transfer_id bigint,
+    vendor_id bigint,
+    shipping_plan_datetime timestamp,
+    payment_amount numeric(14,2),
+    constraint shipping_info_shipping_id_pkey PRIMARY KEY(shipping_id)
 );
 
 ALTER TABLE shipping_info 
