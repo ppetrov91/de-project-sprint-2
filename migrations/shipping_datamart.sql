@@ -1,8 +1,8 @@
 CREATE OR REPLACE VIEW shipping_datamart AS
 SELECT si.shipping_id
-	 , si.vendor_id
-	 , st.transfer_type
-	 , date_part('day', sht.shipping_end_fact_datetime - sht.shipping_start_fact_datetime) AS full_day_at_shipping 
+     , si.vendor_id
+     , st.transfer_type
+     , date_part('day', sht.shipping_end_fact_datetime - sht.shipping_start_fact_datetime) AS full_day_at_shipping 
      
      , CASE 
          WHEN sht.shipping_end_fact_datetime > si.shipping_plan_datetime THEN 1 
@@ -22,7 +22,7 @@ SELECT si.shipping_id
 
      , si.payment_amount
      , si.payment_amount * (scr.shipping_country_base_rate + sa.agreement_rate + st.shipping_transfer_rate) AS vat
-  	 , si.payment_amount * sa.agreement_commission AS profit
+     , si.payment_amount * sa.agreement_commission AS profit
   FROM shipping_info si
   JOIN shipping_transfer st
     ON st.id = si.shipping_transfer_id
