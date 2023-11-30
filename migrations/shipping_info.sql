@@ -59,13 +59,4 @@ SELECT s.shippingid
     ON st.transfer_type = s.shipping_transfer_description_arr[1]
    AND st.transfer_model = s.shipping_transfer_description_arr[2];
 
-CREATE INDEX shipping_info_shipping_country_rate_id_ix
-    ON shipping_info(shipping_country_rate_id); 
-
-CREATE INDEX shipping_info_shipping_agreement_id_ix
-    ON shipping_info(shipping_agreement_id);
-
-CREATE INDEX shipping_info_shipping_transfer_id_ix
-    ON shipping_info(shipping_transfer_id);
-
 ANALYZE shipping_info;
